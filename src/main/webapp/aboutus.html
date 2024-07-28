@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Skincare Product</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background: url('header-bg.jpg') no-repeat center center/cover;
+            background-color: #8BC34A; /* Light green color */
+        }
+
+        h1, h2 {
+            animation: fadeInDown 1s;
+        }
+
+        p {
+            animation: fadeInUp 1s;
+        }
+
+        .bg-primary {
+            background-color: #8BC34A !important; /* Light green color */
+        }
+
+        .animate-img {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll('.animate-img');
+
+            const observerOptions = {
+                root: null,
+                threshold: 0.1,
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            images.forEach(image => {
+                observer.observe(image);
+            });
+        });
+    </script>
+</head>
+<body>
+    <header class="container-fluid bg-primary text-white text-center py-5">
+        <h1>About Us</h1>
+        <p>Discover the story behind our skincare products</p>
+    </header>
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-6 my-auto">
+                <h2>Our Mission</h2>
+                <p>Our mission is to provide high-quality skincare products that are both effective and gentle on your skin. We believe in the power of natural ingredients and are committed to sustainability and ethical practices.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="https://img.freepik.com/free-vector/flat-design-cosmetologist-illustration_23-2149334682.jpg?t=st=1716881802~exp=1716885402~hmac=49ae4757664df06a056645219cab911b524000c0abbb3b381938382fa0df1393&w=740"  class="img-fluid rounded-circle animate-img"  alt="Our Mission">
+            </div>
+        </div>
+    </section>
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-6 order-md-2 my-auto">
+                <h2>Our Story</h2>
+                <p>Founded in 2020, our brand started with a simple idea: to create skincare products that are as good for the planet as they are for your skin. Each product is carefully crafted with the finest natural ingredients.</p>
+            </div>
+            <div class="col-md-6 order-md-1">
+                <img src="https://img.freepik.com/free-psd/levitating-cream-container-studio-still-life_23-2150807017.jpg?t=st=1716881902~exp=1716885502~hmac=ea2afff9a4e1f47c3c4d421ab47b696e0f1889f3b04637d945f500523e09539b&w=826"  class="img-fluid rounded-circle animate-img" alt="Our Story">
+            </div>
+        </div>
+    </section>
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-6 my-auto">
+                <h2>Our Values</h2>
+                <p>Integrity, sustainability, and excellence are at the core of everything we do. We are dedicated to delivering products that meet the highest standards of quality and care for both our customers and the environment.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="https://img.freepik.com/free-psd/skin-product-isolated_23-2151353709.jpg?t=st=1716882119~exp=1716885719~hmac=d3b532c06ad70a3b0301198e56e6ce94e5a1d23c0a5eef8154cbee2c9398f595&w=740" class="img-fluid rounded-circle animate-img" alt="Our Values">
+            </div>
+        </div>
+    </section>
+    <footer class="container-fluid bg-primary text-white text-center py-3">
+        <p>&copy; 2024 Skincare Brand. All rights reserved.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
