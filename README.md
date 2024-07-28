@@ -49,7 +49,7 @@ This website consolidates various skincare products into one platform, allowing 
 ## 🔧 How to Run This Project
 
 ### Prerequisites
-- **Tomcat Server**
+- **Apache Tomcat Server varsion 10.1 **
 - **MySQL Connector JAR**
 - **Tomcat Servlet JAR**
 - **Eclipse with Java 17**
